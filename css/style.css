@@ -1,6 +1,10 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: f4f4f4;
+    color: #333;
 }
 
 /* Layout Utilities */
@@ -43,5 +47,67 @@ header nav a {
 
 nav a:hover {
     color: lightskyblue;
+}
+
+/* Main Layout */
+. layout-grid {
+    display: flex;
+    gap: 30px; /* space between sidebar and main content */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex: 1; /* fills remaining space */
+}
+
+.sidebar {
+    flex: 0 0 300px; /* fixed width for sidebar */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-content {
+    flex: 1; /* fills remaining space */
+    display: flex; /* allows flexbox layout */
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Sidebar Boxes */
+.sidebar-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.sidebar-box h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Filter Form */
+.filter-group {
+    margin-bottom: 15px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: semi-bold;
+    color: #555;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    color: #333;
 }
 
