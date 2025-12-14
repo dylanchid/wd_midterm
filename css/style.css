@@ -43,6 +43,7 @@ header nav a {
     text-decoration: none;
     color: lightgray;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -75,6 +76,60 @@ nav a:hover {
     border-radius: 8px;
 }
 
+.three-columns {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-main {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about-section {
+    margin-bottom: 30px;
+}
+
+.about-section h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.team-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1;
+    min-width: 200px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.team-member h4 {
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
 /* Sidebar Boxes */
 .sidebar-box {
     background: #fff;
@@ -104,12 +159,34 @@ nav a:hover {
     color: #555;
 }
 
-.filter-group select {
+.filter-group input[type="text"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-group input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.radio-group label {
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
 }
 
 .btn-small {
@@ -120,6 +197,12 @@ nav a:hover {
     color: white;
     font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: #008080;
+    color: #ffffff;
 }
 
 /* Media Details Box */
@@ -149,29 +232,92 @@ nav a:hover {
     color: #333;
 }
 
-/* Rankings Display */
-.rankings-display {
-    background: #f8f9fa;
+/* Login Styles */
+.login-main {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-form {
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    margin-bottom: 20px;
 }
 
-.rankings-placeholder {
-    width: 100%;
-    height: 400px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.rankings-placeholder img {
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Rankings Table */
+.rankings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #fff;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.rankings-table th,
+.rankings-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.rankings-table th {
+    background-color: #2c3e50;
+    color: white;
+    font-weight: bold;
+}
+
+.rankings-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.rankings-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.rankings-table tr:hover {
+    background-color: #e8f4fd;
+}
+
+.rankings-table td:nth-child(1) {
+    font-weight: bold;
+    color: #3498db;
+    width: 50px;
+}
+
+.rankings-table td:nth-child(4) {
+    font-weight: bold;
+    color: #2c3e50;
+    width: 60px;
 }
 
 /* Footer Styles */
@@ -181,4 +327,102 @@ footer {
     text-align: center;
     padding: 1rem 0;
     margin-top: auto; /* pushes footer to bottom of page */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet and smaller (768px and below) */
+@media (max-width: 768px) {
+    .layout-grid {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex: none;
+        width: 100%;
+        order: 2; /* sidebar below main */
+    }
+
+    .main-content {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .sidebar-box {
+        padding: 15px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .rankings-placeholder img {
+        height: 250px;
+    }
+
+    .ranking-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .login-main {
+        max-width: 100%;
+    }
+
+    .rankings-table {
+        font-size: 0.9rem;
+        overflow-x: auto;
+        display: block;
+    }
+
+    .radio-group {
+        font-size: 0.85rem;
+    }
+}
+
+/* Large screens (1200px and above) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .sidebar {
+        flex: 0 0 350px;
+    }
+
+    .main-content {
+        padding: 30px;
+    }
 }

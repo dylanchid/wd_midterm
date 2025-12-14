@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CulturaRank - Media Rankings</title>
+    <title>Trends - CulturaRank</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,9 +22,8 @@
         </div>
     </header>
 
-    <div class="container layout-grid">
-        <aside class="sidebar">
-            <!-- Filters Box -->
+    <div class="container three-columns">
+        <section class="column filters-column">
             <section class="sidebar-box filters-box">
                 <h3>Filters & Search</h3>
                 <form>
@@ -77,8 +76,9 @@
                     <button type="button" class="btn-small">Apply Filters</button>
                 </form>
             </section>
+        </section>
 
-            <!-- Top Ranked Item Details -->
+        <section class="column details-column">
             <section class="sidebar-box details-box">
                 <h3>Top Ranked Item Details</h3>
                 <div class="media-details">
@@ -119,20 +119,29 @@
                     </div>
                 </div>
             </section>
-        </aside>
+        </section>
 
-        <main class="main-content">
-            <h2>Current Rankings</h2>
-            <div class="rankings-display">
-                <img src="images/exampleChart.png" alt="Dynamic Rankings Placeholder" class="rankings-placeholder">
+        <section class="column main-column">
+            <div class="main-content">
+                <h2>Current Trends</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <section class="trend-info">
+                    <h3>Trending Statistics</h3>
+                    <ul>
+                        <li><strong>Most Popular Genre:</strong> Sci-Fi</li>
+                        <li><strong>Rising Star:</strong> Christopher Nolan</li>
+                        <li><strong>Average Rating Increase:</strong> +0.5 in the last month</li>
+                        <li><strong>Top Searched Title:</strong> Inception</li>
+                    </ul>
+                    <p>Explore the latest trends in cultural rankings. Our data shows a surge in interest for mind-bending narratives and innovative storytelling.</p>
+                </section>
             </div>
-        </main>
+        </section>
     </div>
-        <footer>
-            <div class="container">
-                <p>&copy; 2025 CulturaRank. All rights reserved.</p>
-            </div>
-        </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CulturaRank. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
-
 </html>
